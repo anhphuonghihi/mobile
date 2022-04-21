@@ -1,0 +1,14 @@
+expo init project
+npm install @react-navigation/drawer
+npm install @react-navigation/native
+npm install @react-navigation/native-stack
+npm install react-native-gesture-handler@2.1.0
+npm install react-native-reanimated@2.1.0
+npm install react-native-safe-area-context@3.3.2
+npm install react-native-screens@3.10.2
+
+src->assets,components,config,constants,helpers,navigations,redux,screens,utils
+
+redux->actions,initalsStates,reducers
+
+.env

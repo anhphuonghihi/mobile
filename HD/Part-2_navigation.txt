@@ -1,0 +1,78 @@
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import DrawNavigation from "./src/navigations/DrawNavigation";
+function App() {
+  return (
+    <NavigationContainer>
+      <DrawNavigation />
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import React from "react";
+import HomeNavigation from "./HomeNavigation"
+const Drawer = createDrawerNavigator();
+const DrawNavigation = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={HomeNavigation} />
+    </Drawer.Navigator>
+  );
+};
+
+export default DrawNavigation;
+
+import React from "react";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import  ContactListScreen from '../screens/ContactListScreen'
+import  ContactDetailsScreen from '../screens/ContactDetailsScreen'
+import  CreateContactScreen from '../screens/CreateContactScreen'
+import  SettingsScreen from '../screens/SettingsScreen'
+import  LogoutScreen from '../screens/LogoutScreen'
+
+const HomeStack = createNativeStackNavigator();
+const HomeNavigation = () => {
+  return (
+    <HomeStack.Navigator screenOptions={{headerShown:false}}>
+      <HomeStack.Screen name="ContactList" component={ContactListScreen} />
+      <HomeStack.Screen name="ContactDetails" component={ContactDetailsScreen} />
+      <HomeStack.Screen name="CreateContact" component={CreateContactScreen} />
+      <HomeStack.Screen name="Setting" component={SettingsScreen} />
+      <HomeStack.Screen name="Logout" component={LogoutScreen} />
+    </HomeStack.Navigator>
+  );
+};
+
+export default HomeNavigation;
+
+
+import React from "react";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import  LoginScreen from '../screens/LoginScreen'
+import  RegisterScreen from '../screens/RegisterScreen'
+
+const Stack = createNativeStackNavigator();
+const AuthNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+};
+
+export default AuthNavigation;
+
+export const CONTACT_LIST = 'Contacts';
+export const CONTACT_DETAIL = 'Contact detail';
+export const CREATE_CONTACT = 'Create Contact';
+export const SETTINGS = 'Settings';
+export const LOGIN = 'Login';
+export const REGISTER = 'Register';
+export const HOME_NAVIGATOR = 'Home';
+export const LOGOUT = 'Logout';
+
+rnfes
